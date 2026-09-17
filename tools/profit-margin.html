@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Freelance Profit Margin Calculator | RateScope</title>
+  <meta name="description" content="Calculate profit, margin, markup, payment fees, and break-even revenue for a freelance project or service business.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://ppch627.github.io/ratescope-tools/tools/profit-margin.html">
+  <meta property="og:title" content="Freelance Profit Margin Calculator">
+  <meta property="og:description" content="See what remains after delivery costs, overhead, and payment processing.">
+  <meta property="og:image" content="https://ppch627.github.io/ratescope-tools/assets/og-image.png">
+  <meta name="theme-color" content="#0d6b57">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="stylesheet" href="../styles.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Freelance Profit Margin Calculator","applicationCategory":"BusinessApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+  </script>
+</head>
+<body data-currency="USD" data-tool="profit-margin">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="../index.html" aria-label="RateScope home"><img class="logo-mark" src="../assets/logo.svg" alt="" width="34" height="34"><span>RateScope</span></a>
+      <button class="mobile-nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="nav" id="site-nav" aria-label="Primary navigation"><a href="../index.html#tools" aria-current="page">Calculators</a><a href="../guides/index.html">Guides</a><a href="../about.html">About</a><a class="button small" href="hourly-rate.html">Find your rate</a></nav>
+    </div>
+  </header>
+  <main id="main">
+    <div class="container">
+      <div class="breadcrumbs"><a href="../index.html">Home</a> / <a href="../index.html#tools">Calculators</a> / Profit margin</div>
+      <header class="page-hero">
+        <p class="eyebrow">Free calculator</p>
+        <h1>Freelance profit margin calculator</h1>
+        <p class="lead">Revenue is not profit. See what is left after delivery costs, overhead, and payment processing.</p>
+      </header>
+    </div>
+
+    <div class="container calculator-layout">
+      <form class="form-card" data-calculator="margin" data-live="true">
+        <h2 style="font-size:1.45rem">Project economics</h2>
+        <p class="muted">Use a single project, a service line, or a monthly snapshot. Keep the time period consistent.</p>
+        <div class="form-grid">
+          <div class="field">
+            <label for="revenue">Revenue</label>
+            <div class="input-prefix"><span>$</span><input id="revenue" name="revenue" type="number" min="0" step="100" value="10000" inputmode="decimal"></div>
+          </div>
+          <div class="field">
+            <label for="directCosts">Direct delivery costs</label>
+            <div class="input-prefix"><span>$</span><input id="directCosts" name="directCosts" type="number" min="0" step="100" value="3200" inputmode="decimal"></div>
+            <small>Contractors, materials, licenses, travel, and work sold specifically for this revenue.</small>
+          </div>
+          <div class="field">
+            <label for="overhead">Allocated overhead</label>
+            <div class="input-prefix"><span>$</span><input id="overhead" name="overhead" type="number" min="0" step="50" value="900" inputmode="decimal"></div>
+            <small>Software, subscriptions, office, accounting, insurance, and other ongoing costs.</small>
+          </div>
+          <div class="field">
+            <label for="paymentFeePercent">Payment processing fee</label>
+            <div class="input-prefix"><input id="paymentFeePercent" name="paymentFeePercent" type="number" min="0" max="50" step="0.1" value="3" inputmode="decimal"><span style="left:auto;right:.7rem">%</span></div>
+          </div>
+        </div>
+        <div class="form-actions"><button class="button" type="submit">Calculate margin</button><button class="button secondary" type="button" data-reset>Reset</button></div>
+      </form>
+
+      <aside class="result-card" aria-live="polite">
+        <span class="badge">Project profit</span>
+        <div class="result-total" style="margin-top:1rem"><span>Profit margin</span><strong id="resultMargin">0%</strong></div>
+        <ul class="result-list">
+          <li><span>Profit</span><strong id="profitAmount">$0</strong></li>
+          <li><span>Total costs</span><strong id="costAmount">$0</strong></li>
+          <li><span>Payment processing</span><strong id="paymentFee">$0</strong></li>
+          <li><span>Markup on cost</span><strong id="markupAmount">0%</strong></li>
+          <li><span>Break-even revenue</span><strong id="breakEvenRevenue">$0</strong></li>
+        </ul>
+        <div class="form-actions"><button class="button secondary small" type="button" data-copy-result>Copy result</button></div>
+        <p class="muted" style="font-size:.8rem;margin:1rem 0 0">Planning estimate before income tax and any costs not entered above.</p>
+      </aside>
+    </div>
+
+    <section class="section compact"><div class="container"><div class="ad-slot" data-ad-slot="margin-after-calculator">Advertisement space</div></div></section>
+
+    <section class="section">
+      <div class="container content">
+        <p class="eyebrow">Know the difference</p>
+        <h2>Margin is not markup</h2>
+        <p>Margin compares profit with revenue. Markup compares profit with cost. A 50% markup is only a 33.3% margin, which is why a price can look generous while leaving less profit than expected.</p>
+        <ul>
+          <li><strong>Profit:</strong> revenue minus all costs included in the calculation.</li>
+          <li><strong>Margin:</strong> profit divided by revenue, expressed as a percentage.</li>
+          <li><strong>Markup:</strong> profit divided by cost, expressed as a percentage.</li>
+          <li><strong>Break-even revenue:</strong> the revenue required to cover entered costs after payment fees.</li>
+        </ul>
+        <h3>Which costs belong here?</h3>
+        <p>Direct delivery costs are easy to connect to the work. Overhead is shared across the business and must be allocated using a consistent method such as hours worked, revenue share, or an equal monthly amount. If a cost is excluded, the margin shown will be higher than the real result.</p>
+        <div class="notice">Do not compare margins across different business models without checking what each owner included. A software product and a bespoke agency project carry very different cost structures.</div>
+        <h3>How to improve margin without overworking</h3>
+        <ol>
+          <li>Raise prices where demand and outcomes justify it.</li>
+          <li>Reduce expensive delivery inputs or replace low-value work with repeatable templates.</li>
+          <li>Improve estimates so revisions and admin are paid for.</li>
+          <li>Move repeatable services into productized packages with a defined scope.</li>
+          <li>Track actual hours and costs after delivery, then update the next quote.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section compact">
+      <div class="container content">
+        <h2>Questions about freelance margin</h2>
+        <div class="faq">
+          <details><summary>What is a good freelance profit margin?</summary><p>It depends on risk, utilization, and business model. A solo service business may need a higher margin than a productized agency because revenue is less predictable and time cannot be scaled easily.</p></details>
+          <details><summary>Should owner pay be a cost?</summary><p>For decision-making, it is useful to separate market-rate owner pay from profit. If you do not include it, a positive margin may simply be hidden compensation for your time.</p></details>
+          <details><summary>Why is my break-even revenue higher than my costs?</summary><p>Payment processing takes a percentage of revenue. The business must collect enough revenue so the amount remaining after the fee covers all other costs.</p></details>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="container footer-bottom" style="margin-top:0;border-top:0;padding-top:0"><span>© <span data-year>2026</span> RateScope.</span><span><a href="../contact.html">Contact</a> · <a href="../privacy.html">Privacy</a> · <a href="../terms.html">Terms</a> · <a href="../affiliate-disclosure.html">Disclosure</a></span></div></footer>
+  <script src="../site-config.js" defer></script>
+  <script src="../monetization.js" defer></script>
+  <script src="../app.js" defer></script>
+</body>
+</html>
