@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Freelance Hourly Rate Calculator | RateScope</title>
+  <meta name="description" content="Calculate the hourly rate you need from your target income, business costs, billable hours, and time off.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://ppch627.github.io/ratescope-tools/tools/hourly-rate.html">
+  <meta property="og:title" content="Freelance Hourly Rate Calculator">
+  <meta property="og:description" content="Turn income, costs, and billable capacity into a sustainable hourly rate.">
+  <meta property="og:image" content="https://ppch627.github.io/ratescope-tools/assets/og-image.png">
+  <meta name="theme-color" content="#0d6b57">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="stylesheet" href="../styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Freelance Hourly Rate Calculator",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+</head>
+<body data-currency="USD" data-tool="hourly-rate">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="../index.html" aria-label="RateScope home">
+        <img class="logo-mark" src="../assets/logo.svg" alt="" width="34" height="34"><span>RateScope</span>
+      </a>
+      <button class="mobile-nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="nav" id="site-nav" aria-label="Primary navigation">
+        <a href="../index.html#tools" aria-current="page">Calculators</a>
+        <a href="../guides/index.html">Guides</a>
+        <a href="../about.html">About</a>
+        <a class="button small" href="project-quote.html">Quote a project</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="container">
+      <div class="breadcrumbs"><a href="../index.html">Home</a> / <a href="../index.html#tools">Calculators</a> / Hourly rate</div>
+      <header class="page-hero">
+        <p class="eyebrow">Free calculator</p>
+        <h1>Freelance hourly rate calculator</h1>
+        <p class="lead">Find the rate your business needs, not the rate your least confident competitor charges. Results update as you type.</p>
+      </header>
+    </div>
+
+    <div class="container calculator-layout">
+      <form class="form-card" data-calculator="hourly" data-live="true">
+        <h2 style="font-size:1.45rem">Your target</h2>
+        <p class="muted">Use gross income before personal tax. Add business tax and every recurring operating cost.</p>
+        <div class="form-grid">
+          <div class="field">
+            <label for="targetIncome">Desired annual income</label>
+            <div class="input-prefix"><span>$</span><input id="targetIncome" name="targetIncome" type="number" min="0" step="1000" value="80000" inputmode="decimal"></div>
+          </div>
+          <div class="field">
+            <label for="businessCosts">Annual business costs</label>
+            <div class="input-prefix"><span>$</span><input id="businessCosts" name="businessCosts" type="number" min="0" step="500" value="16000" inputmode="decimal"></div>
+            <small>Software, insurance, equipment, accounting, marketing, and tax reserve.</small>
+          </div>
+          <div class="field">
+            <label for="billableHours">Billable hours per week</label>
+            <input id="billableHours" name="billableHours" type="number" min="1" max="80" step="1" value="22" inputmode="decimal">
+            <small>Only count hours a client can actually be billed for.</small>
+          </div>
+          <div class="field">
+            <label for="weeksOff">Weeks off per year</label>
+            <input id="weeksOff" name="weeksOff" type="number" min="0" max="30" step="1" value="6" inputmode="decimal">
+            <small>Public holidays, illness, vacation, and quiet periods.</small>
+          </div>
+          <div class="field">
+            <label for="bufferPercent">Safety buffer</label>
+            <div class="input-prefix"><input id="bufferPercent" name="bufferPercent" type="number" min="0" max="100" step="1" value="15" inputmode="decimal"><span style="left:auto;right:.7rem">%</span></div>
+            <small>Protects against unpaid admin, collection delays, and underestimation.</small>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button class="button" type="submit">Calculate rate</button>
+          <button class="button secondary" type="button" data-reset>Reset</button>
+        </div>
+      </form>
+
+      <aside class="result-card" aria-live="polite">
+        <span class="badge">Your rate</span>
+        <div class="result-total" style="margin-top:1rem">
+          <span>Recommended hourly rate</span>
+          <strong id="resultRate">$0</strong>
+        </div>
+        <ul class="result-list">
+          <li><span>Break-even hourly rate</span><strong id="baseRate">$0</strong></li>
+          <li><span>8-hour day rate</span><strong id="dayRate">$0</strong></li>
+          <li><span>Weekly billable target</span><strong id="weeklyTarget">$0</strong></li>
+          <li><span>Annual billable capacity</span><strong id="billableTotal">0 hours</strong></li>
+        </ul>
+        <div class="form-actions">
+          <button class="button secondary small" type="button" data-copy-result>Copy result</button>
+        </div>
+        <p class="muted" style="font-size:.8rem;margin:1rem 0 0">This is a planning estimate, not tax or legal advice.</p>
+      </aside>
+    </div>
+
+    <section class="section compact">
+      <div class="container">
+        <div class="ad-slot" data-ad-slot="hourly-after-calculator">Advertisement space</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container content">
+        <p class="eyebrow">Understand the number</p>
+        <h2>Why your rate is higher than a salary divided by 2,080</h2>
+        <p>A full-time employee can be paid for vacation, training, management, and downtime. An independent professional usually can bill only for a portion of the working week. The rest goes to sales, proposals, administration, learning, invoicing, and finding the next client.</p>
+        <h3>The formula</h3>
+        <p><strong>Required revenue</strong> = desired income + annual business costs. That amount is then divided by realistic annual billable hours. Finally, add a safety buffer so a slow month or underestimated project does not erase your profit.</p>
+        <div class="notice">The result is a floor for your pricing model, not a promise that every prospect will accept it. If the market will not pay it, change the offer, audience, or delivery model.</div>
+        <h3>What to include in business costs</h3>
+        <ul>
+          <li>Accounting, legal, insurance, and banking fees</li>
+          <li>Software, hosting, hardware replacement, and professional development</li>
+          <li>Marketing, portfolio upkeep, networking, and sales costs</li>
+          <li>A tax reserve appropriate to your jurisdiction and business structure</li>
+          <li>An emergency fund for illness, delays, and seasonal demand</li>
+        </ul>
+        <h3>How to use the result in a quote</h3>
+        <p>Keep the hourly rate as your internal cost of time. For fixed-price work, multiply it by every hour the project will consume, including revisions and project management. Add risk, tax, and a deposit as shown in the <a href="project-quote.html">project quote calculator</a>.</p>
+      </div>
+    </section>
+
+    <section class="section compact">
+      <div class="container content">
+        <h2>Questions about hourly rates</h2>
+        <div class="faq">
+          <details><summary>How many billable hours are realistic?</summary><p>Solo service businesses often bill between 15 and 30 hours in a 40-hour week. Your number depends on lead generation, admin load, and whether you sell productized work.</p></details>
+          <details><summary>Should I increase the rate every year?</summary><p>Review it at least annually. Costs, demand, skills, and utilization change. Raising new-client rates first is usually easier than changing existing agreements.</p></details>
+          <details><summary>Can I use a rounded rate?</summary><p>Yes. Round upward to a defensible number. Do not round down below the calculated floor unless you deliberately accept lower profit for a strategic reason.</p></details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom" style="margin-top:0;border-top:0;padding-top:0">
+      <span>© <span data-year>2026</span> RateScope.</span>
+      <span><a href="../contact.html">Contact</a> · <a href="../privacy.html">Privacy</a> · <a href="../terms.html">Terms</a> · <a href="../affiliate-disclosure.html">Disclosure</a></span>
+    </div>
+  </footer>
+  <script src="../site-config.js" defer></script>
+  <script src="../monetization.js" defer></script>
+  <script src="../app.js" defer></script>
+</body>
+</html>
