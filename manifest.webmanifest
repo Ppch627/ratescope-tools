@@ -1,0 +1,12 @@
+{
+  "name": "RateScope",
+  "short_name": "RateScope",
+  "description": "Free pricing and profitability calculators for independent professionals.",
+  "start_url": "/ratescope-tools/",
+  "display": "standalone",
+  "background_color": "#f7faf8",
+  "theme_color": "#0d6b57",
+  "icons": [
+    { "src": "/ratescope-tools/assets/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
