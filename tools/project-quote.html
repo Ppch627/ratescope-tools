@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Freelance Project Quote Calculator | RateScope</title>
+  <meta name="description" content="Build a clearer freelance project quote with labor, revisions, admin time, scope risk, tax, and deposit included.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://ppch627.github.io/ratescope-tools/tools/project-quote.html">
+  <meta property="og:title" content="Freelance Project Quote Calculator">
+  <meta property="og:description" content="Price the whole project, including the work clients often forget to buy.">
+  <meta property="og:image" content="https://ppch627.github.io/ratescope-tools/assets/og-image.png">
+  <meta name="theme-color" content="#0d6b57">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="stylesheet" href="../styles.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Freelance Project Quote Calculator","applicationCategory":"BusinessApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+  </script>
+</head>
+<body data-currency="USD" data-tool="project-quote">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="../index.html" aria-label="RateScope home"><img class="logo-mark" src="../assets/logo.svg" alt="" width="34" height="34"><span>RateScope</span></a>
+      <button class="mobile-nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="nav" id="site-nav" aria-label="Primary navigation">
+        <a href="../index.html#tools" aria-current="page">Calculators</a><a href="../guides/index.html">Guides</a><a href="../about.html">About</a><a class="button small" href="hourly-rate.html">Find your rate</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <div class="container">
+      <div class="breadcrumbs"><a href="../index.html">Home</a> / <a href="../index.html#tools">Calculators</a> / Project quote</div>
+      <header class="page-hero">
+        <p class="eyebrow">Free calculator</p>
+        <h1>Freelance project quote calculator</h1>
+        <p class="lead">Turn an hourly cost model into a fixed quote that includes revisions, admin, risk, tax, and a deposit.</p>
+      </header>
+    </div>
+
+    <div class="container calculator-layout">
+      <form class="form-card" data-calculator="quote">
+        <h2 style="font-size:1.45rem">Build the estimate</h2>
+        <p class="muted">Enter your internal rate. If you do not know it, use the <a href="hourly-rate.html">hourly rate calculator</a> first.</p>
+        <div class="form-grid">
+          <div class="field">
+            <label for="estimateHours">Production hours</label>
+            <input id="estimateHours" name="estimateHours" type="number" min="0" step="0.5" value="40" inputmode="decimal">
+            <small>Core work needed to deliver the agreed outcome.</small>
+          </div>
+          <div class="field">
+            <label for="hourlyRate">Internal hourly rate</label>
+            <div class="input-prefix"><span>$</span><input id="hourlyRate" name="hourlyRate" type="number" min="0" step="1" value="95" inputmode="decimal"></div>
+          </div>
+          <div class="field">
+            <label for="revisionHours">Revision allowance</label>
+            <input id="revisionHours" name="revisionHours" type="number" min="0" step="0.5" value="6" inputmode="decimal">
+            <small>Plan for included feedback rounds instead of giving them away.</small>
+          </div>
+          <div class="field">
+            <label for="adminHours">Admin and communication</label>
+            <input id="adminHours" name="adminHours" type="number" min="0" step="0.5" value="5" inputmode="decimal">
+            <small>Kickoff, calls, files, project management, and handover.</small>
+          </div>
+          <div class="field">
+            <label for="riskPercent">Scope risk buffer</label>
+            <div class="input-prefix"><input id="riskPercent" name="riskPercent" type="number" min="0" max="100" step="1" value="15" inputmode="decimal"><span style="left:auto;right:.7rem">%</span></div>
+          </div>
+          <div class="field">
+            <label for="taxPercent">Tax or reserve percentage</label>
+            <div class="input-prefix"><input id="taxPercent" name="taxPercent" type="number" min="0" max="100" step="1" value="10" inputmode="decimal"><span style="left:auto;right:.7rem">%</span></div>
+            <small>Use the reserve appropriate for your jurisdiction and business.</small>
+          </div>
+          <div class="field">
+            <label for="depositPercent">Deposit percentage</label>
+            <div class="input-prefix"><input id="depositPercent" name="depositPercent" type="number" min="0" max="100" step="1" value="25" inputmode="decimal"><span style="left:auto;right:.7rem">%</span></div>
+          </div>
+        </div>
+        <div class="form-actions"><button class="button" type="submit">Build quote</button><button class="button secondary" type="button" data-reset>Reset</button></div>
+      </form>
+
+      <aside class="result-card" aria-live="polite">
+        <span class="badge">Client quote</span>
+        <div class="result-total" style="margin-top:1rem"><span>Total project quote</span><strong id="resultQuote">$0</strong></div>
+        <ul class="result-list">
+          <li><span>Labor, revisions, and admin</span><strong id="laborTotal">$0</strong></li>
+          <li><span>Scope risk buffer</span><strong id="riskTotal">$0</strong></li>
+          <li><span>Subtotal before tax</span><strong id="subtotalTotal">$0</strong></li>
+          <li><span>Tax or reserve</span><strong id="taxTotal">$0</strong></li>
+          <li><span>Deposit due to start</span><strong id="depositTotal">$0</strong></li>
+        </ul>
+        <div class="form-actions"><button class="button secondary small" type="button" data-copy-result>Copy result</button></div>
+        <p class="muted" style="font-size:.8rem;margin:1rem 0 0">Confirm tax treatment and contract terms with a qualified professional.</p>
+      </aside>
+    </div>
+
+    <section class="section compact"><div class="container"><div class="ad-slot" data-ad-slot="quote-after-calculator">Advertisement space</div></div></section>
+
+    <section class="section">
+      <div class="container content">
+        <p class="eyebrow">Quote with a boundary</p>
+        <h2>What belongs inside the project price</h2>
+        <p>A useful quote is not only the time spent creating the final deliverable. It covers discovery, setup, communication, revision, quality control, file preparation, handover, and the commercial risk that the scope may change.</p>
+        <h3>Included hours versus extra work</h3>
+        <p>List what the price includes: number of concepts, revision rounds, meetings, formats, and delivery date assumptions. Anything outside that list becomes a new written request and, when appropriate, a change order.</p>
+        <div class="notice">A deposit is not a bonus. It funds the beginning of the work and filters out prospects who are not ready to commit.</div>
+        <h3>A simple quote structure</h3>
+        <ol>
+          <li><strong>Outcome:</strong> what changes for the client after delivery.</li>
+          <li><strong>Deliverables:</strong> exactly what you will produce.</li>
+          <li><strong>Scope:</strong> included revisions, meetings, and formats.</li>
+          <li><strong>Timeline:</strong> dependencies and dates that rely on client feedback.</li>
+          <li><strong>Price and payment:</strong> deposit, milestones, due dates, and late-fee terms.</li>
+          <li><strong>Approval:</strong> a clear written acceptance path before work begins.</li>
+        </ol>
+        <h3>When the estimate is wrong</h3>
+        <p>Do not hide a material estimation error by reducing your own rate to zero. Discuss a change order early, document the new requirement, and explain how it affects the delivery date or price. That is more professional than silently producing an unprofitable project.</p>
+      </div>
+    </section>
+
+    <section class="section compact">
+      <div class="container content">
+        <h2>Questions about fixed quotes</h2>
+        <div class="faq">
+          <details><summary>Should the client see my hourly rate?</summary><p>Usually not necessary. The client buys the outcome and a defined scope. Your internal rate is still essential for deciding whether the fixed price is profitable.</p></details>
+          <details><summary>How much risk buffer is enough?</summary><p>There is no universal percentage. Use more when the brief is vague, the client is new, the technology is uncertain, or many stakeholders must approve the work.</p></details>
+          <details><summary>What if the client asks for a discount?</summary><p>Reduce scope, not the value of the same work. Remove deliverables, revision rounds, meetings, or speed. Protect the core margin.</p></details>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="container footer-bottom" style="margin-top:0;border-top:0;padding-top:0"><span>© <span data-year>2026</span> RateScope.</span><span><a href="../contact.html">Contact</a> · <a href="../privacy.html">Privacy</a> · <a href="../terms.html">Terms</a> · <a href="../affiliate-disclosure.html">Disclosure</a></span></div></footer>
+  <script src="../site-config.js" defer></script>
+  <script src="../monetization.js" defer></script>
+  <script src="../app.js" defer></script>
+</body>
+</html>
