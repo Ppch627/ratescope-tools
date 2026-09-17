@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Late Invoice Fee Calculator | RateScope</title>
+  <meta name="description" content="Estimate simple daily interest and the total due on an overdue freelance invoice after a contractual grace period.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://ppch627.github.io/ratescope-tools/tools/late-fee.html">
+  <meta property="og:title" content="Late Invoice Fee Calculator">
+  <meta property="og:description" content="Estimate simple daily interest on an overdue invoice using the rate in your contract.">
+  <meta property="og:image" content="https://ppch627.github.io/ratescope-tools/assets/og-image.png">
+  <meta name="theme-color" content="#0d6b57">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="stylesheet" href="../styles.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Late Invoice Fee Calculator","applicationCategory":"BusinessApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+  </script>
+</head>
+<body data-currency="USD" data-tool="late-fee">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="../index.html" aria-label="RateScope home"><img class="logo-mark" src="../assets/logo.svg" alt="" width="34" height="34"><span>RateScope</span></a>
+      <button class="mobile-nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="nav" id="site-nav" aria-label="Primary navigation"><a href="../index.html#tools" aria-current="page">Calculators</a><a href="../guides/index.html">Guides</a><a href="../about.html">About</a><a class="button small" href="hourly-rate.html">Find your rate</a></nav>
+    </div>
+  </header>
+  <main id="main">
+    <div class="container">
+      <div class="breadcrumbs"><a href="../index.html">Home</a> / <a href="../index.html#tools">Calculators</a> / Late fee</div>
+      <header class="page-hero">
+        <p class="eyebrow">Free calculator</p>
+        <h1>Late invoice fee calculator</h1>
+        <p class="lead">Estimate simple daily interest after the grace period in your written agreement.</p>
+      </header>
+    </div>
+
+    <div class="container calculator-layout">
+      <form class="form-card" data-calculator="late">
+        <h2 style="font-size:1.45rem">Invoice details</h2>
+        <p class="muted">Use the rate and grace period that actually appear in your contract or invoice terms.</p>
+        <div class="form-grid">
+          <div class="field">
+            <label for="invoiceAmount">Outstanding invoice amount</label>
+            <div class="input-prefix"><span>$</span><input id="invoiceAmount" name="invoiceAmount" type="number" min="0" step="10" value="2500" inputmode="decimal"></div>
+          </div>
+          <div class="field">
+            <label for="annualRate">Annual late-fee rate</label>
+            <div class="input-prefix"><input id="annualRate" name="annualRate" type="number" min="0" max="100" step="0.1" value="8" inputmode="decimal"><span style="left:auto;right:.7rem">%</span></div>
+            <small>Do not use this calculator to invent a rate that is not allowed by law or contract.</small>
+          </div>
+          <div class="field">
+            <label for="daysLate">Days past due</label>
+            <input id="daysLate" name="daysLate" type="number" min="0" step="1" value="45" inputmode="numeric">
+          </div>
+          <div class="field">
+            <label for="graceDays">Grace period</label>
+            <input id="graceDays" name="graceDays" type="number" min="0" step="1" value="7" inputmode="numeric">
+            <small>Days before the late fee begins under the agreement.</small>
+          </div>
+        </div>
+        <div class="form-actions"><button class="button" type="submit">Calculate late fee</button><button class="button secondary" type="button" data-reset>Reset</button></div>
+        <div class="notice" style="margin-top:1.5rem"><strong>Important:</strong> late-interest rules, maximum rates, consumer protections, and notice requirements vary by jurisdiction and contract. This tool provides a mathematical estimate only and is not legal advice.</div>
+      </form>
+
+      <aside class="result-card" aria-live="polite">
+        <span class="badge">Amount due</span>
+        <div class="result-total" style="margin-top:1rem"><span>Invoice plus estimated interest</span><strong id="resultLate">$0</strong></div>
+        <ul class="result-list">
+          <li><span>Estimated interest</span><strong id="interestAmount">$0</strong></li>
+          <li><span>Daily interest</span><strong id="dailyInterest">$0</strong></li>
+          <li><span>Chargeable days</span><strong id="chargeableDays">0 days</strong></li>
+        </ul>
+        <div class="form-actions"><button class="button secondary small" type="button" data-copy-result>Copy result</button></div>
+        <p class="muted" style="font-size:.8rem;margin:1rem 0 0">Simple interest assumes 365 days per year and no compounding.</p>
+      </aside>
+    </div>
+
+    <section class="section compact"><div class="container"><div class="ad-slot" data-ad-slot="late-fee-after-calculator">Advertisement space</div></div></section>
+
+    <section class="section">
+      <div class="container content">
+        <p class="eyebrow">Get paid on time</p>
+        <h2>A late fee works only when it is agreed before the work starts</h2>
+        <p>Payment terms should be visible in the proposal, contract, and invoice. State when payment is due, how it should be made, what happens after the due date, and who to contact if there is a billing problem.</p>
+        <h3>A practical overdue-invoice sequence</h3>
+        <ol>
+          <li><strong>Before the due date:</strong> confirm receipt and ask whether the invoice has entered the client's payment system.</li>
+          <li><strong>One to three days late:</strong> send a short reminder with the invoice attached and repeat the payment date.</li>
+          <li><strong>After the grace period:</strong> reference the agreed term, state the amount now due, and request a payment date in writing.</li>
+          <li><strong>If it remains unpaid:</strong> pause non-essential new work, escalate to the correct decision-maker, and consider formal collection options appropriate to the amount and jurisdiction.</li>
+        </ol>
+        <div class="notice">Keep communication factual and professional. Threats, abusive messages, public pressure, or unauthorized charges can damage your position and may create legal risk.</div>
+        <h3>Reduce late payments before they happen</h3>
+        <ul>
+          <li>Take a deposit before committing delivery capacity.</li>
+          <li>Use milestones for longer projects instead of one final invoice.</li>
+          <li>Put the legal business name, tax details, purchase-order reference, and payment instructions on every invoice.</li>
+          <li>Ask new clients how their accounts-payable process works before you start.</li>
+          <li>Do not deliver final files or transfer rights beyond what the contract permits until payment is complete.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section compact">
+      <div class="container content">
+        <h2>Questions about overdue invoices</h2>
+        <div class="faq">
+          <details><summary>Can I charge interest if the contract is silent?</summary><p>Possibly, depending on local law, but never assume. Check the applicable rules and get professional advice before adding a charge that was not agreed.</p></details>
+          <details><summary>Should late fees compound?</summary><p>This calculator uses simple interest. Compounding or fixed late charges may have different legal treatment. Your contract should state the method clearly.</p></details>
+          <details><summary>What if the client disputes the invoice?</summary><p>Pause the late-fee countdown for the disputed portion if your agreement requires it, and resolve the factual dispute in writing before escalating.</p></details>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="container footer-bottom" style="margin-top:0;border-top:0;padding-top:0"><span>© <span data-year>2026</span> RateScope.</span><span><a href="../contact.html">Contact</a> · <a href="../privacy.html">Privacy</a> · <a href="../terms.html">Terms</a> · <a href="../affiliate-disclosure.html">Disclosure</a></span></div></footer>
+  <script src="../site-config.js" defer></script>
+  <script src="../monetization.js" defer></script>
+  <script src="../app.js" defer></script>
+</body>
+</html>
