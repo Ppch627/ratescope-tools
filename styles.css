@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   --ink: #102033;
   --ink-soft: #516174;
   --paper: #f7faf8;
@@ -132,6 +132,11 @@ input:focus, select:focus { border-color: var(--brand); box-shadow: 0 0 0 3px rg
 .result-total { margin-bottom: 1.25rem; padding: 1.2rem; border-radius: var(--radius-sm); background: var(--ink); color: #fff; }
 .result-total span { display: block; color: #cdd8d5; font-size: .84rem; }
 .result-total strong { display: block; margin-top: .12rem; font-size: clamp(2rem, 5vw, 3rem); letter-spacing: -.045em; line-height: 1.1; }
+blockquote {
+  margin: 1.5rem 0; padding: 1rem 1.25rem; border-left: 4px solid var(--brand);
+  border-radius: 10px; background: #fff; color: var(--ink-soft);
+}
+blockquote p:last-child { margin-bottom: 0; }
 .notice { padding: .9rem 1rem; border-left: 4px solid var(--accent); border-radius: 8px; background: #fff5e4; color: #6d4a0f; font-size: .88rem; }
 .muted { color: var(--ink-soft); }
 .content { max-width: 820px; }
